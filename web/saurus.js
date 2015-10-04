@@ -28,8 +28,8 @@ function maxSaurus(text, callback) {
                 synonyms.sort(function(a, b) {
                     return b.length - a.length;
                 });
-                processedWord = synonyms[0];
-                processedWord = processedWord.replace(filteredWord, processedWord);
+                console.log(lowerWord.indexOf(filteredWord));
+                processedWord = lowerWord.replace(filteredWord, synonyms[0]);
             }
 
             newText = newText + " " + processedWord;
