@@ -12,7 +12,7 @@ block content
    p(id= 'pp' class='header') !{output}
 
    h2="Stats"
-   p(class="header") Original length: !{originalCount} characters. Better length: !{finalCount} characters.<br />!{finalCount/originalCount}% more sophisticated.
+   p(class="header") Original length: !{originalCount} characters. Better length: !{finalCount} characters.<br />!{originalCount/finalCount * 100}% more sophisticated.
 
    div(class="span7 text-center")
       button(value="Select Text" class="btn btn-default" id="sel") Select Text
