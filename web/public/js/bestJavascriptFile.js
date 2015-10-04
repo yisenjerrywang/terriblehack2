@@ -4,10 +4,16 @@
 
 
 $(document).ready(function(){
-    document.getElementById('sel').onclick = function(){
-        console.log('here')
-        $('#pp').selectText()
+    $('#pp').lettering('words');
+    $("span").attr("data-toggle", "tooltip")
+    x = $('#op').text().split(' ')
+
+    for (var i = 0; i < x.length; i++){
+        mystr = '.word' + parseInt(i + 2)
+        $(mystr).attr('title', x[i])
     }
+
+    $('[data-toggle="tooltip"]').tooltip()
 })
 
 
@@ -28,17 +34,3 @@ jQuery.fn.selectText = function(){
         selection.addRange(range);
     }
 };
-
-window.addEventListener('load', function() {
-    window.doppler.init(function(bandwidth) {
-        var threshold = 4;
-        if (bandwidth.left > threshold || bandwidth.right > threshold) {
-            var scale    = 10;
-            var baseSize = 100;
-            var diff = bandwidth.left - bandwidth.right;
-            var dimension = (baseSize + scale*diff) + 'px';
-            document.getElementById('box').style.width  = dimension;
-            document.getElementById('box').style.height = dimension;
-        }
-    });
-});

@@ -1,15 +1,13 @@
 extends layout
 
 block content
-   script(type="text/javascript").
-      var local_data = '!{output}'
 
    h1="Output"
    h2="Original"
    p(id="op" class='header') !{original}
 
    h2="Extreme-makeover essay edition result"
-   p(id= 'pp' class='header') !{output}
+   p(id='pp' class='header') !{output}
 
    h2="Stats"
    p(class="header") Original length: !{originalCount} characters. Better length: !{finalCount} characters.<br />!{(finalCount - originalCount)/originalCount * 100}% more sophisticated.
@@ -21,7 +19,9 @@ block content
       form(action='/' method='get')
          input(type="submit" value="Make more essays gooder!" class="btn btn-default")
 
+   script(src='js/jquery.lettering-0.6.1.min.js')
    script(src='js/bestJavascriptFile.js')
+
 
 
 
