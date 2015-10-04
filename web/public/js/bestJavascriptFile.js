@@ -4,17 +4,28 @@
 
 
 $(document).ready(function(){
-    local_data = JSON.parse(local_data)
-    local_data.text = local_data.text.replace('%0D%0A', '<br />')
-    //$('#pp').text(local_data.text)
+    document.getElementById('sel').onclick = function(){
+        console.log('here')
+        $('#pp').selectText()
+    }
+
 })
 
-function replaceText(data){
-    var arr = []
-    var lines = data.split(/\n/)
-    var tempDiv = jQuery(document.createElement('div'));
-    for (var i = 0; i < lines.length; i++){
-        arr.push(tempDiv.text(lines[i]).html())
+
+jQuery.fn.selectText = function(){
+    var doc = document
+        , element = this[0]
+        , range, selection
+        ;
+    if (doc.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(element);
+        range.select();
+    } else if (window.getSelection) {
+        selection = window.getSelection();
+        range = document.createRange();
+        range.selectNodeContents(element);
+        selection.removeAllRanges();
+        selection.addRange(range);
     }
-    return arr.join("<br>")
-}
+};
