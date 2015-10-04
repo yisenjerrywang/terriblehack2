@@ -98,9 +98,9 @@ saurus.funSaurus = function (text, callback) {
                 processedWord = word;
             }
             else {
-                var count = Math.floor(Math.random() * (synonyms.length - 0 + 1)) + synonyms.length;
+                var count = Math.floor(Math.random() * (synonyms.length));
                 while(synonyms[count].indexOf(" ") > 0) {
-                    count = Math.floor(Math.random() * (synonyms.length - 0 + 1)) + synonyms.length;
+                    count = Math.floor(Math.random() * (synonyms.length));
                 }
                 var bestSynonym = synonyms[count];
                 if(plural == true && bestSynonym.indexOf("-") < 0 && pluralize(bestSynonym, 1) != pluralize(bestSynonym)) {
