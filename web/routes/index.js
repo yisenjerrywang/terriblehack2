@@ -9,7 +9,8 @@ router.get('/', function(req, res, next) {
 
 router.post('/essayParse', function(req, res, next){
   saurus.maxSaurus(req.body.inputTxt, function(outputText){
-  	res.render('essayOutput', { title: 'Essay Better Maker', original: req.body.inputTxt, output: outputText})
+  	res.render('essayOutput', { title: 'Essay Better Maker', original: req.body.inputTxt, output: outputText,
+    originalCount: req.body.inputTxt.length, finalCount: outputText.length})
   });
 })
 

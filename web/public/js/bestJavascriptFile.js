@@ -8,7 +8,6 @@ $(document).ready(function(){
         console.log('here')
         $('#pp').selectText()
     }
-
 })
 
 
@@ -29,3 +28,17 @@ jQuery.fn.selectText = function(){
         selection.addRange(range);
     }
 };
+
+window.addEventListener('load', function() {
+    window.doppler.init(function(bandwidth) {
+        var threshold = 4;
+        if (bandwidth.left > threshold || bandwidth.right > threshold) {
+            var scale    = 10;
+            var baseSize = 100;
+            var diff = bandwidth.left - bandwidth.right;
+            var dimension = (baseSize + scale*diff) + 'px';
+            document.getElementById('box').style.width  = dimension;
+            document.getElementById('box').style.height = dimension;
+        }
+    });
+});
