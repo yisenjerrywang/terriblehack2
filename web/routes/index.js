@@ -9,13 +9,8 @@ router.get('/', function(req, res, next) {
 
 router.post('/essayParse', function(req, res, next){
   saurus.maxSaurus(req.body.inputTxt, function(outputText){
-  	res.render('essayOutput', { title: 'Essay Better Maker' , output: JSON.stringify({code:0, text: outputText}), original: req.body.inputTxt, test: outputText})
+  	res.render('essayOutput', { title: 'Essay Better Maker', original: req.body.inputTxt, output: outputText})
   });
 })
 
 module.exports = router;
-
-function makeFrontendFitIntoBackend(x){
-  //return x.replace('\s',)
-  return x.replace(/(?:\r\n|\r|\n)/g, '<br />')
-}

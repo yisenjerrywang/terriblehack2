@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #C98BB9;
 }
 
 a {
@@ -20,4 +21,23 @@ a {
 
 .input-large[class=input-large] {
   width: 400px;
+}
+
+h1, p, h2 {
+  color: #FFFFFF;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+h2, .header{
+  padding-left: 30px;
+}
+
+h2{
+  font-family: 'Comic Sans MS', sans-serif;
+  font-style: italic;
+}
+
+#sel{
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

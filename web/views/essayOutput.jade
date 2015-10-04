@@ -6,14 +6,17 @@ block content
 
    h1="Output"
    h2="Original"
-   p(id="op") !{original}
+   p(id="op" class='header') !{original}
 
    h2="Extreme-makeover essay edition result"
-   p(id= 'pp') !{test}
+   p(id= 'pp' class='header') !{output}
 
-   button(value="Select Text" class="btn btn-default" id="sel") Select Text
+   div(class="span7 text-center")
+      button(value="Select Text" class="btn btn-default" id="sel") Select Text
+      form(action='/' method='get')
+         input(type="submit" value="Make more essays better!" class="btn btn-default")
 
-   form(action='/' method='get')
-      input(type="submit" value="Make more essays better!" class="btn btn-default")
    script(src='js/bestJavascriptFile.js')
+
+
 
