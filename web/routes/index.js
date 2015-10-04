@@ -14,7 +14,7 @@ router.post('/essayParse', function(req, res, next){
         originalCount: req.body.inputTxt.length, finalCount: outputText.length})
     });
   } else {
-    
+
   }
 
 
