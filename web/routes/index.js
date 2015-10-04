@@ -6,9 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Essay Better Maker' });
 });
 
-router.post('/sendSurvey', function(req, res, next){
+router.post('/essayParse', function(req, res, next){
   console.log(req.body.inputTxt)
-  res.render('index', { title: 'Essay Better Maker' , output: 'testOutput'})
+  res.render('essayOutput', { title: 'Essay Better Maker' , output: 'testOutput'})
 })
 
 module.exports = router;
