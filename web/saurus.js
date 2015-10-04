@@ -10,14 +10,16 @@ function maxSaurus(text, callback) {
         console.error("Input isn't a string?");
     }
     else {
-        var words = text.split(" ");
+        var words = text.split(/-| /);
         var newText = "";
         for(i in words) {
             var word = words[i];
-            var lowerWord = words[i].toLowerCase();
-            var synonyms = thesaurus.search(lowerWord);
+            var lowerWord = word.toLowerCase();
+            var filteredWord = lowerWord.replace(/[^\w\s]|_/g,"");
+
+            var synonyms = thesaurus.search(filteredWord);
             if (synonyms.length == 0) {
-                console.error("No synonyms found for " + lowerWord);
+                console.error("No synonyms found for " + filteredWord);
                 newText = newText + " " + word;
             }
             else {
@@ -28,8 +30,5 @@ function maxSaurus(text, callback) {
             }
         }
     }
-    console.log(newText);
+    callback(newText);
 }
-
-
-saurus.maxSaurus("cheese");
