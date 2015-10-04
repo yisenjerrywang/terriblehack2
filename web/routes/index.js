@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/sendSurvey', function(req, res, next){
   console.log(req.body.inputTxt)
-  res.redirect('back')
+  res.render('index', { title: 'Essay Better Maker' , output: 'testOutput'})
 })
 
 module.exports = router;
