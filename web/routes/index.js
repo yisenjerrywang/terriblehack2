@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.post('/sendSurvey', function(req, res, next){
+  console.log(req.body.inputTxt)
+  res.redirect('back')
+})
+
 module.exports = router;
