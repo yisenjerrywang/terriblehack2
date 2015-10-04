@@ -12,7 +12,7 @@ block content
    p(id= 'pp' class='header') !{output}
 
    h2="Stats"
-   p(class="header") Original length: !{originalCount} characters. Better length: !{finalCount} characters.<br />!{originalCount/finalCount * 100}% more sophisticated.
+   p(class="header") Original length: !{originalCount} characters. Better length: !{finalCount} characters.<br />!{(finalCount - originalCount)/originalCount * 100}% more sophisticated.
 
    //img(src="images/sophisticated.gif" class="img-rounded")
 
