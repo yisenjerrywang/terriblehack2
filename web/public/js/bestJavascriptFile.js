@@ -5,8 +5,8 @@
 
 $(document).ready(function(){
     local_data = JSON.parse(local_data)
-    local_data.text = local_data.text.replace(/\n/, '<br />')
-    $('#pp').html(local_data.text)
+    local_data.text = local_data.text.replace('%0D%0A', '<br />')
+    //$('#pp').text(local_data.text)
 })
 
 function replaceText(data){

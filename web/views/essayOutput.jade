@@ -4,8 +4,12 @@ block content
    script(type="text/javascript").
       var local_data = '!{output}'
 
-   h1=title
-   p(id= 'pp')
+   h1="Output"
+   h2="Original"
+   p(id="op") !{original}
+
+   h2="Extreme-makeover essay edition result"
+   p(id= 'pp') !{test}
 
    form(action='/' method='get')
       input(type="submit" value="Make more essays better!" class="btn btn-default")
