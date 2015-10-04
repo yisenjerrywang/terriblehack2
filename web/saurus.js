@@ -68,7 +68,7 @@ saurus.funSaurus = function (text, callback) {
         console.error("Input isn't a string?");
     }
     else {
-        var words = text.split(/-| /);
+        var words = text.split(" ");
         var newText = "";
         for(i in words) {
             var processedWord = "";
@@ -94,7 +94,7 @@ saurus.funSaurus = function (text, callback) {
 
             var synonyms = thesaurus.search(finalWord);
             if(synonyms.length == 0) {
-                console.log("No synonyms found for " + finalWord);
+                //console.log("No synonyms found for " + finalWord);
                 processedWord = word;
             }
             else {
@@ -117,6 +117,5 @@ saurus.funSaurus = function (text, callback) {
             newText = newText + " " + processedWord;
         }
     }
-    newText = newText.substr(1);
     callback(newText);
 }
