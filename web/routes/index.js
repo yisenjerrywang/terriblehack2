@@ -7,8 +7,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/essayParse', function(req, res, next){
-  console.log(req.body.inputTxt)
-  res.render('essayOutput', { title: 'Essay Better Maker' , output: req.body.inputTxt})
+  var x = makeFrontendFitIntoBackend(req.body.inputTxt)
+  res.render('essayOutput', { title: 'Essay Better Maker' , output: JSON.stringify({code:0, text:x})})
 })
 
 module.exports = router;
+
+function makeFrontendFitIntoBackend(x){
+  //return x.replace('\s',)
+  return x.replace(/(?:\r\n|\r|\n)/g, '<br />')
+}
