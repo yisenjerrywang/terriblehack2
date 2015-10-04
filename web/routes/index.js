@@ -8,10 +8,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/essayParse', function(req, res, next){
-  saurus.maxSaurus(req.body.inputTxt, function(outputText){
-  	res.render('essayOutput', { title: 'Essay Better Maker', original: req.body.inputTxt, output: outputText,
-    originalCount: req.body.inputTxt.length, finalCount: outputText.length})
-  });
+  if (req.body.firstBtn){
+    saurus.maxSaurus(req.body.inputTxt, function(outputText){
+      res.render('essayOutput', { title: 'Essay Better Maker', original: req.body.inputTxt, output: outputText,
+        originalCount: req.body.inputTxt.length, finalCount: outputText.length})
+    });
+  } else {
+    
+  }
+
+
 })
 
 module.exports = router;
+

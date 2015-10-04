@@ -29,7 +29,7 @@ function maxSaurus(text, callback) {
 
             var synonyms = thesaurus.search(finalWord);
             if(synonyms.length == 0) {
-                console.log("No synonyms found for " + finalWord);
+                //console.log("No synonyms found for " + finalWord);
                 processedWord = word;
             }
             else {
@@ -42,10 +42,10 @@ function maxSaurus(text, callback) {
                 }
                 var bestSynonym = synonyms[count];
                 if(plural == true && bestSynonym.indexOf("-") < 0 && bestSynonym.slice(-1) != "s") {
-                    console.log("pluralizing: " + bestSynonym);
+                    //console.log("pluralizing: " + bestSynonym);
                     bestSynonym = pluralize(bestSynonym);
                 }
-                console.log("Lower word: " + lowerWord + " Final word: " + finalWord + " bestSynonym: " + bestSynonym);
+                //console.log("Lower word: " + lowerWord + " Final word: " + finalWord + " bestSynonym: " + bestSynonym);
                 processedWord = lowerWord.replace(filteredWord, bestSynonym);
             }
 
