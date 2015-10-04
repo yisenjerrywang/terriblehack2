@@ -8,9 +8,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/essayParse', function(req, res, next){
-  var x = makeFrontendFitIntoBackend(req.body.inputTxt)
   saurus.maxSaurus(req.body.inputTxt, function(outputText){
-  	res.render('essayOutput', { title: 'Essay Better Maker' , output: outputText})
+  	res.render('essayOutput', { title: 'Essay Better Maker' , output: JSON.stringify({code:0, text: outputText})})
   });
 })
 
