@@ -11,8 +11,11 @@
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "jade": "~1.11.0",
+    "moby": "^1.1.1",
     "morgan": "~1.6.1",
+    "pluralize": "^1.2.1",
     "serve-favicon": "~2.3.0",
-    "thesaurus": "0.0.0"
+    "thesaurus": "0.0.0",
+    "words-and-hyphens": "0.0.5"
   }
 }

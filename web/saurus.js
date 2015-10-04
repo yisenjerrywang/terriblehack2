@@ -1,27 +1,34 @@
-var thesaurus = require('thesaurus');
+var thesaurus = require('moby');
+var pluralize = require('pluralize');
 
 var saurus = module.exports;
 
-saurus.split = function(text, callback) {
+saurus.maxSaurus = maxSaurus;
+
+function maxSaurus(text, callback) {
     if(typeof text != "string" ) {
-        callback(null);
+        console.error("Input isn't a string?");
     }
-
-    callback(text.split(" "));
-}
-
-saurus.maxSaurus = function(word, callback) {
-    var synonyms = thesaurus.find(word);
-
-    if (synonyms.length == 0) {
-        callback(null);
+    else {
+        var words = text.split(" ");
+        var newText = "";
+        for(i in words) {
+            var word = words[i];
+            var lowerWord = words[i].toLowerCase();
+            var synonyms = thesaurus.search(lowerWord);
+            if (synonyms.length == 0) {
+                console.error("No synonyms found for " + lowerWord);
+                newText = newText + " " + word;
+            }
+            else {
+                synonyms.sort(function(a, b) {
+                    return b.length - a.length;
+                });
+                newText = newText + " " + synonyms[0];
+            }
+        }
     }
-
-    synonyms.sort(function(a, b) { 
-        return b.length - a.length; 
-    });
-
-    console.log(synonyms[0]);
+    console.log(newText);
 }
 
 
