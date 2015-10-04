@@ -13,6 +13,8 @@ function maxSaurus(text, callback) {
         var words = text.split(/-| /);
         var newText = "";
         for(i in words) {
+            var processedWord = "";
+
             var word = words[i];
             var lowerWord = word.toLowerCase();
             var filteredWord = lowerWord.replace(/[^\w\s]|_/g,"");
@@ -20,14 +22,17 @@ function maxSaurus(text, callback) {
             var synonyms = thesaurus.search(filteredWord);
             if (synonyms.length == 0) {
                 console.error("No synonyms found for " + filteredWord);
-                newText = newText + " " + word;
+                processedWord = word;
             }
             else {
                 synonyms.sort(function(a, b) {
                     return b.length - a.length;
                 });
-                newText = newText + " " + synonyms[0];
+                processedWord = synonyms[0];
+                processedWord = processedWord.replace(filteredWord, processedWord);
             }
+
+            newText = newText + " " + processedWord;
         }
     }
     callback(newText);
