@@ -3,11 +3,6 @@
  */
 
 
-
-function main(){
-
-}
-
 $(document).ready(function(){
     $('#pp').text(local_data)
 })
