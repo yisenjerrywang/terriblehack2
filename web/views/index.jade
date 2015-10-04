@@ -2,8 +2,8 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p This will make your essay better.
   form(action="sendSurvey", method="post")
     div(class="form-group")
-      input(type="text" class="form-control input-lg" id="inputTxt" name="inputTxt")
+      input(type="text" class="form-control input-large" placeholder="Put essay in here to pass ELPE" id="inputTxt" name="inputTxt")
     input(type="submit" class="btn btn-default")
