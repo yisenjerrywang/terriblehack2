@@ -10,7 +10,8 @@ router.get('/', function(req, res, next) {
 router.post('/essayParse', function(req, res, next){
   var x = makeFrontendFitIntoBackend(req.body.inputTxt)
   saurus.maxSaurus(req.body.inputTxt, function(outputText){
-  	res.render('essayOutput', { title: 'Essay Better Maker' , output: outputText})
+  	var text = makeFrontendFitIntoBackend(outputText);
+  	res.render('essayOutput', { title: 'Essay Better Maker' , output: text})
   });
 })
 
